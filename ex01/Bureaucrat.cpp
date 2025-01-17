@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:16:20 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/17 13:12:17 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/17 14:08:59 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	}
 	return *this;
 }
-
-Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) {
 	this->name = name;
