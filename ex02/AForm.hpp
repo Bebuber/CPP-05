@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 13:17:22 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/18 12:54:48 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/18 15:11:39 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class AForm : public std::exception{
 
 		void beSigned(Bureaucrat& bureaucrat);
 		virtual void execute(Bureaucrat const & executor) const = 0;
+		virtual std::string getClassName() const;
 		
 		class GradeTooHighException : public std::exception {
 			public:

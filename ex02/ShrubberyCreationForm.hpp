@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 12:12:58 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/18 13:04:16 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/18 15:15:49 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class  ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm& operator=(const  ShrubberyCreationForm& other);
 		~ShrubberyCreationForm();
 
-		void execute(Bureaucrat const & executor) const;
+		void execute(Bureaucrat const & executor) const override;
+		std::string getClassName() const override;
 };
 
 #endif

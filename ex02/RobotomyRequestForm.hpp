@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:23:18 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/18 13:24:14 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/18 15:16:01 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class  RobotomyRequestForm : public AForm {
 		RobotomyRequestForm& operator=(const  RobotomyRequestForm& other);
 		~RobotomyRequestForm();
 
-		void execute(Bureaucrat const & executor) const;
+		void execute(Bureaucrat const & executor) const override;
+		std::string getClassName() const override;
 };
 
 #endif

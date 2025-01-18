@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 12:12:54 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/18 13:20:31 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/18 15:14:48 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Bureaucrat.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Target", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(name, 145, 137) {}
 
@@ -28,12 +28,13 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
+std::string ShrubberyCreationForm::getClassName() const { return "ShrubberyCreationForm"; };
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (!getIs_Signed())
 		throw AForm::FormNotSignedException();
 	if (executor.getGrade() > getGrade_execute())
-		throw AForm::GradeTooHighException();
+		throw AForm::GradeTooLowException();
 
 	std::ofstream outfile(getName() + "_shrubbery");
 	if (!outfile.is_open()) {
@@ -71,5 +72,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	outfile << "                          ...;%@@@@@%%:;;;;,..      *https://ascii.co.uk/art/tree" << std::endl;
 
 	outfile.close();
-	std::cout << "Shrubbery created for form: " << getName() << std::endl;
+	std::cout << "Shrubbery created in: " << getName() + "_shrubbery" << std::endl;
 }

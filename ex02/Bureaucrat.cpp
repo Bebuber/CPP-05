@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:16:20 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/18 12:07:06 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/18 15:26:13 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,20 @@ void Bureaucrat::signForm(AForm& form) {
 	}
 	try {
 		form.beSigned(*this);
-		std::cout << this->getName() << " signed " << form.getName() << " successfully!" << std::endl;
+		std::cout << this->getName() << " signed " << form.getClassName() << " for " << form.getName() << " successfully!" << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << this->getName() << " couldn't sign " << form.getClassName() << " for " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
 void Bureaucrat::executeForm(AForm const & form) {
 	try {
 		form.execute(*this);
-		std::cout << this->getName() << " executed " << form.getName() << " successfully!" << std::endl;
+		std::cout << this->getName() << " executed " << form.getClassName() << "." << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << this->getName() << " couldn't execute " << form.getClassName() << " because " << e.what() << std::endl;
     }
 }
 
