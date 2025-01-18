@@ -6,20 +6,25 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 13:17:22 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/17 14:11:25 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/18 10:43:14 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
-#include "Bureaucrat.hpp"
+#include <string>
+#include <exception>
+#include <iostream>
+
+class Bureaucrat;
+
 class Form : public std::exception{
 	private:
-		std::string name;
+		const std::string name;
 		bool is_signed;
-		int grade_sign;
-		int grade_execute;
+		const int grade_sign;
+		const int grade_execute;
 	public:
 		Form();
 		Form(const Form& other);
@@ -32,7 +37,7 @@ class Form : public std::exception{
 		int getGrade_execute() const;
 		bool getIs_Signed() const;
 
-		void beSigned(const Bureaucrat& bureaucrat);
+		void beSigned(Bureaucrat& bureaucrat);
 		
 		class GradeTooHighException : public std::exception {
 			public:

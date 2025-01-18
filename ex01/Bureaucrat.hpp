@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:15:19 by bebuber           #+#    #+#             */
-/*   Updated: 2025/01/17 13:58:25 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/01/17 17:16:20 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <exception>
 #include <iostream>
 
+class Form;
 class Bureaucrat : public std::exception{
 	private:
 		std::string name;
@@ -34,7 +35,7 @@ class Bureaucrat : public std::exception{
 		
 		void incrementGrade();
 		void decrementGrade();
-		void signForm();
+		void signForm(Form& form);
 		
 		class GradeTooHighException : public std::exception {
 			public:
